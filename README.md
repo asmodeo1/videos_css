@@ -7,4 +7,7 @@
 -   Para las estrellas podéis crear clases CSS que muestre las estrellas correspondientes cambiando un width donde la estrella esté de imagen de fondo (la estrella ocupa 24px), repitiendo el fondo
 -   Entre el video y el título puede quedar una separación inferior. Esto es debido a que el iframe es de tipo inline y deja ese espacio. Una solución es usar display:block en el iframe.
 
+Efectos a realziar:
+- al pasar el ratón sobre el enlace + información, el color de fondo debe cambiar a un azul más claro
+
   
