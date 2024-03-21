@@ -8,91 +8,117 @@
         Tipo de letra: https://www.dafont.com/es/cinema-st.font
     -->
     <style>
+      /* Quitamos todos los márgenes, espaciados y ponemos todo el
+      texto al tamaño normal. Así no no sencontraremos con márgenes y
+      espaciados no deseados */
       * {
         margin: 0;
         padding: 0;
         font-size: 100%;
       }
       @font-face {
-        font-family: cinema;
+        font-family: cinema; /* Un nombre cualquiera que usaremos posteriormente */
         src: url(cinema_st.ttf);
       }
+      /* Para que el degradado ocupe todo el alto de la página debemos:
+      - poner height: 100%; en la etiqueta html y en body
+      - poner el degradado en el body y además background-attachment: fixed; y
+        background-repeat: no-repeat; 
+      */
       html {
         height: 100%;
       }
       body {
-        background: rgb(0,0,0);
-        background: linear-gradient(180deg, rgb(0,0,0) 0%, rgb(67, 67, 67) 100%); 
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          180deg,
+          rgb(0, 0, 0) 0%,
+          rgb(67, 67, 67) 100%
+        );
         background-attachment: fixed;
         background-repeat: no-repeat;
         height: 100%;
       }
 
       header {
-        font-family: cinema;
+        font-family: cinema; /* El nombre que pusimos anteriormente a la fuente */
         font-size: 5em;
         text-align: center;
-        color:rgb(201, 208, 211)
+        color: rgb(201, 208, 211);
       }
       main {
+        /* Para usar margin: auto debemos darle un width al main, en este caso del 97% 
+        porque queremos que ocupe casi todo el ancho */
         width: 97%;
         margin: auto;
         text-align: center;
       }
       .video {
+        /* Para poner los videos en la misma línea */
         display: inline-block;
         margin: 1em;
         width: 420px;
         border-radius: 20px 20px 0 0;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
         background-color: rgb(64, 93, 121);
-        border:solid 1px rgb(155, 155, 155);
+        border: solid 1px rgb(155, 155, 155);
+        /* Como usamos text-align: center en el main, ahora queremos los texto a la izquierda */
         text-align: left;
       }
       .video p {
         padding: 10px;
-        color:white
+        color: white;
       }
       .video h2 {
         background-color: white;
-        color:brown;
+        color: brown;
         padding: 10px;
       }
-      
+
       .video iframe {
-        width: 100%;
+        width: 100%; /* Usamos 100% para que coja todo el ancho del contenedor, aunque
+            podríamos poner también píxeles */
         height: 236px;
         border-radius: 20px 20px 0 0;
         display: block; /* Para eliminar un pequeño espacio que queda entre el iframe y el h2 */
       }
+      /* Para poner las estrellas, podríamos ponerlas como imágenes en el mismo HTML, siendo
+      la opción más sencilla. En este caso, para practicar cosas nuevas, la vamos a poner de fondo.
+      Por ello necesitamos una clase .puntuacion con las propiedades comunes y luego
+      creamos clases específicas para dos estrellas, tres estrellas, ....
+      En ellas simplemente cambiamos el width del contenedor al adecuado. Como la imagen
+      de la estrella mide 24px, para una estrella será 24px, para 2 será 48px, .... */
       .puntuacion {
         height: 26px;
         background-image: url(estrella.png);
+        /* Solo queremos que se repitan horizontalmente */
         background-repeat: repeat-x;
         margin: 5px;
       }
       .estrellas_4 {
+        /* Podríamos poner directamente 96px, o usar calc para realizar operaciones */
         width: calc(24px * 4);
       }
       .estrellas_3 {
         width: calc(24px * 3);
-      }      
+      }
       .estrellas_2 {
         width: calc(24px * 2);
-      }    
+      }
       .imdb {
         text-align: left;
         padding: 10px;
         font-size: 0.6;
         border-top: 1px solid white;
         background-color: rgb(1, 42, 64);
-      }  
+      }
       .imdb a {
-        color:white;
+        color: white;
         text-decoration: none;
         background-color: rgb(64, 93, 121);
         padding: 5px 10px;
-        display: inline-block;
+        display: inline-block; /* Para que el padding y margen superior e inferior se tengan en cuenta */
       }
       .imdb a:hover {
         background-color: rgb(39, 123, 196);
@@ -101,15 +127,18 @@
         text-align: right;
         background-color: rgb(1, 42, 64);
       }
-
     </style>
   </head>
   <body>
     <header>
-        <h1>Trailers 2024</h1>
+      <h1>Trailers 2024</h1>
     </header>
     <main>
       <div class="video">
+        <!-- Para conseguir el video, vamos al video deseado en Youtube, pulsamos en la opción 
+        Compartir, luego Insertar y copiamos el código del iframe que se muestra.
+        Lo pegamos y podremos cambiarle algunas cosas. En este caso hemos optado
+        por quitar el ancho y alto y ponerlo en CSS-->
         <iframe
           src="https://www.youtube.com/embed/kxyyKU8rgaU?si=p8fTj4yvMhMiyFhB&amp;controls=0"
           title="YouTube video player"
@@ -117,16 +146,19 @@
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
+        <!-- el carácter & es uno de esos especiales, como < y >, con lo que deberíamos
+        ponerlo como &amp; -->
         <h2>Deadpool &amp; Wolverine</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum
+          ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
         </p>
         <div class="puntuacion estrellas_4"></div>
-        <div class="imdb"><a href="">+ Información</a></div>  
+        <div class="imdb"><a href="">+ Información</a></div>
         <footer class="sociales">
-            <a href=""><img src="facebook.svg" alt="Facebook"></a>
-            <a href=""><img src="twitter.svg" alt="Twitter"></a>
-        </footer>   
+          <a href=""><img src="facebook.svg" alt="Facebook" /></a>
+          <a href=""><img src="twitter.svg" alt="Twitter" /></a>
+        </footer>
       </div>
       <div class="video">
         <iframe
@@ -138,14 +170,15 @@
         ></iframe>
         <h2>La primera profecía</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
-            </p>
-        <div class="puntuacion estrellas_2"></div>   
-        <div class="imdb"><a href="">+ Información</a></div>  
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum
+          ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+        </p>
+        <div class="puntuacion estrellas_2"></div>
+        <div class="imdb"><a href="">+ Información</a></div>
         <footer class="sociales">
-            <a href=""><img src="facebook.svg" alt="Facebook"></a>
-            <a href=""><img src="twitter.svg" alt="Twitter"></a>
-        </footer>      
+          <a href=""><img src="facebook.svg" alt="Facebook" /></a>
+          <a href=""><img src="twitter.svg" alt="Twitter" /></a>
+        </footer>
       </div>
       <div class="video">
         <iframe
@@ -157,14 +190,15 @@
         ></iframe>
         <h2>Constantine 2</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
-            </p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum
+          ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+        </p>
         <div class="puntuacion estrellas_2"></div>
-        <div class="imdb"><a href="">+ Información</a></div>  
+        <div class="imdb"><a href="">+ Información</a></div>
         <footer class="sociales">
-            <a href=""><img src="facebook.svg" alt="Facebook"></a>
-            <a href=""><img src="twitter.svg" alt="Twitter"></a>
-        </footer>       
+          <a href=""><img src="facebook.svg" alt="Facebook" /></a>
+          <a href=""><img src="twitter.svg" alt="Twitter" /></a>
+        </footer>
       </div>
       <div class="video">
         <iframe
@@ -176,14 +210,15 @@
         ></iframe>
         <h2>Nuevo Reino</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
-            </p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum
+          ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+        </p>
         <div class="puntuacion estrellas_4"></div>
-        <div class="imdb"><a href="">+ Información</a></div>  
+        <div class="imdb"><a href="">+ Información</a></div>
         <footer class="sociales">
-            <a href=""><img src="facebook.svg" alt="Facebook"></a>
-            <a href=""><img src="twitter.svg" alt="Twitter"></a>
-        </footer>       
+          <a href=""><img src="facebook.svg" alt="Facebook" /></a>
+          <a href=""><img src="twitter.svg" alt="Twitter" /></a>
+        </footer>
       </div>
       <div class="video">
         <iframe
@@ -195,16 +230,16 @@
         ></iframe>
         <h2>The mummy: resurrection2</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
-            </p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum
+          ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+        </p>
         <div class="puntuacion estrellas_3"></div>
-        <div class="imdb"><a href="">+ Información</a></div>  
+        <div class="imdb"><a href="">+ Información</a></div>
         <footer class="sociales">
-            <a href=""><img src="facebook.svg" alt="Facebook"></a>
-            <a href=""><img src="twitter.svg" alt="Twitter"></a>
-        </footer>       
+          <a href=""><img src="facebook.svg" alt="Facebook" /></a>
+          <a href=""><img src="twitter.svg" alt="Twitter" /></a>
+        </footer>
       </div>
     </main>
   </body>
 </html>
-
