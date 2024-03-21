@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trailers 2024</title>
+    <!-- 
+        Tipo de letra: https://www.dafont.com/es/cinema-st.font
+    -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+      }
+      @font-face {
+        font-family: cinema;
+        src: url(cinema_st.ttf);
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        background: rgb(0,0,0);
+        background: linear-gradient(180deg, rgb(0,0,0) 0%, rgb(67, 67, 67) 100%); 
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        height: 100%;
+      }
+
+      header {
+        font-family: cinema;
+        font-size: 5em;
+        text-align: center;
+        color:rgb(201, 208, 211)
+      }
+      main {
+        width: 97%;
+        margin: auto;
+        text-align: center;
+      }
+      .video {
+        display: inline-block;
+        margin: 1em;
+        width: 420px;
+        border-radius: 20px 20px 0 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: rgb(64, 93, 121);
+        border:solid 1px rgb(155, 155, 155);
+        text-align: left;
+      }
+      .video p {
+        padding: 10px;
+        color:white
+      }
+      .video h2 {
+        background-color: white;
+        color:brown;
+        padding: 10px;
+      }
+      
+      .video iframe {
+        width: 100%;
+        height: 236px;
+        border-radius: 20px 20px 0 0;
+        display: block; /* Para eliminar un pequeño espacio que queda entre el iframe y el h2 */
+      }
+      .puntuacion {
+        height: 26px;
+        background-image: url(estrella.png);
+        background-repeat: repeat-x;
+        margin: 5px;
+      }
+      .estrellas_4 {
+        width: calc(24px * 4);
+      }
+      .estrellas_3 {
+        width: calc(24px * 3);
+      }      
+      .estrellas_2 {
+        width: calc(24px * 2);
+      }    
+      .imdb {
+        text-align: left;
+        padding: 10px;
+        font-size: 0.6;
+        border-top: 1px solid white;
+        background-color: rgb(1, 42, 64);
+      }  
+      .imdb a {
+        color:white;
+        text-decoration: none;
+        background-color: rgb(64, 93, 121);
+        padding: 5px 10px;
+        display: inline-block;
+      }
+      .imdb a:hover {
+        background-color: rgb(39, 123, 196);
+      }
+      .sociales {
+        text-align: right;
+        background-color: rgb(1, 42, 64);
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+        <h1>Trailers 2024</h1>
+    </header>
+    <main>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/kxyyKU8rgaU?si=p8fTj4yvMhMiyFhB&amp;controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+        </p>
+        <div class="puntuacion estrellas_4"></div>
+        <div class="imdb"><a href="">+ Información</a></div>  
+        <footer class="sociales">
+            <a href=""><img src="facebook.svg" alt="Facebook"></a>
+            <a href=""><img src="twitter.svg" alt="Twitter"></a>
+        </footer>   
+      </div>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>La primera profecía</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+            </p>
+        <div class="puntuacion estrellas_2"></div>   
+        <div class="imdb"><a href="">+ Información</a></div>  
+        <footer class="sociales">
+            <a href=""><img src="facebook.svg" alt="Facebook"></a>
+            <a href=""><img src="twitter.svg" alt="Twitter"></a>
+        </footer>      
+      </div>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/sBU8ejvW6fM?si=d_dly4zOaOOVougY&amp;controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Constantine 2</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+            </p>
+        <div class="puntuacion estrellas_2"></div>
+        <div class="imdb"><a href="">+ Información</a></div>  
+        <footer class="sociales">
+            <a href=""><img src="facebook.svg" alt="Facebook"></a>
+            <a href=""><img src="twitter.svg" alt="Twitter"></a>
+        </footer>       
+      </div>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/DDWWwEiWHJw?si=kpL_IWyhA4GRSVEa"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Nuevo Reino</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+            </p>
+        <div class="puntuacion estrellas_4"></div>
+        <div class="imdb"><a href="">+ Información</a></div>  
+        <footer class="sociales">
+            <a href=""><img src="facebook.svg" alt="Facebook"></a>
+            <a href=""><img src="twitter.svg" alt="Twitter"></a>
+        </footer>       
+      </div>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/ASrbrFuagHQ?si=5Y7U4aPVEQHsuR_K"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>The mummy: resurrection2</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+            </p>
+        <div class="puntuacion estrellas_3"></div>
+        <div class="imdb"><a href="">+ Información</a></div>  
+        <footer class="sociales">
+            <a href=""><img src="facebook.svg" alt="Facebook"></a>
+            <a href=""><img src="twitter.svg" alt="Twitter"></a>
+        </footer>       
+      </div>
+    </main>
+  </body>
+</html>
+
