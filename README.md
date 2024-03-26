@@ -10,4 +10,8 @@
 Efectos a realziar:
 - al pasar el ratón sobre el enlace + información, el color de fondo debe cambiar a un azul más claro
 
+Se han añadido dos soluciones:
+- una con display: inline-block
+- una con Flexbox
+
   
