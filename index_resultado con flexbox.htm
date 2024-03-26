@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trailers 2024</title>
+    <style>
+      /* Los comentarios con ++++ son las propiedades que se añaden al usar flexbox.
+      Los comentarios con ---- son las propiedades que se quitan al usar flexbo */
+      @font-face {
+        font-family: cinema;
+        src: url(cinema_st.ttf);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-size: 100%;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          180deg,
+          rgb(0, 0, 0) 0%,
+          rgb(67, 67, 67) 100%
+        );
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+      header h1 {
+        font-family: cinema !important;
+        font-size: 5rem;
+        text-align: center;
+        color: rgb(179, 178, 178);
+      }
+      main {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        /* ++++++++++++++++++++++++ 
+        Ponemos el contenedor a tipo flexbox. En este caso
+        usamos el main, pues no tenemos nada más en el mismo.
+        Por defecto la dirección es row, es decir, en una fila */
+        display: flex;
+        flex-wrap: wrap; /* Para que salten a la siguiente fila si no caben horizontalmente */
+        justify-content: space-evenly; /* Dejamos el mismo espacio horizontal entre los elementos */
+        gap: 20px; /* Espacio entre los elementos */
+        /* ++++++++++++++++++ */
+      }
+      .trailer {
+        /* --------
+       display: inline-block;
+        width: 30%;
+         --------*/
+        max-width: 372px; /* ++++++++ Para que no crezcan más de 372px */
+        border: 1px lightgray solid;
+        border-radius: 15px 15px 0 0;
+        overflow: hidden;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        /*  --------- margin: 15px;  */
+        text-align: left;
+        /* ------ vertical-align: top; */
+      }
+      .trailer iframe {
+        width: 100%;
+        height: 236px;
+      }
+      .trailer h2 {
+        background-color: white;
+        color: rgb(130, 2, 2);
+        padding: 10px;
+      }
+      .info {
+        background-color: #405d79;
+        color: white;
+        padding: 10px;
+        border-bottom: 1px white solid;
+      }
+      .info p {
+        margin-bottom: 5px;
+      }
+      .trailer footer {
+        background-color: #01182c;
+      }
+      .boton {
+        background-color: #405d79;
+        color: white;
+        padding: 5px 10px;
+        display: inline-block;
+        margin: 10px;
+      }
+      .boton:hover {
+        background-color: #3c8dd9;
+      }
+      .enlaces {
+        text-align: end;
+      }
+      .puntuacion {
+        background-image: url(estrella.png);
+        height: 24px;
+        text-indent: -3000px;
+      }
+      .puntuacion1 {
+        width: 24px;
+      }
+      .puntuacion2 {
+        width: calc(24px * 2);
+      }
+      .puntuacion3 {
+        width: calc(24px * 3);
+      }
+      .puntuacion4 {
+        width: calc(24px * 4);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Trailers 2024</h1>
+    </header>
+    <main>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <div class="puntuacion puntuacion3"></div>
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <div class="puntuacion puntuacion2">2 estrellas</div>
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <div class="puntuacion puntuacion2">2 estrellas</div>
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <div class="puntuacion puntuacion3"></div>
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <img src="estrella.png" alt="1 estrella" />
+          <img src="estrella.png" alt="1 estrella" />
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
