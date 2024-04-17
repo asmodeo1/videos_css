@@ -14,4 +14,6 @@ Se han añadido dos soluciones:
 - una con display: inline-block
 - una con Flexbox
 
+Se ha añadido una solución responsiva: index_resultado_responsivo.htm que usa flex
+
   
