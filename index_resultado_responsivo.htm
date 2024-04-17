@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trailers 2024</title>
+    <style>
+      /* Vamos a convertir la página de los videos en responsiva. Para ello
+      conviene quitar los floats, display: inline-block y anchos fijos que tuviésemos,
+      aunque no en todos los casos. Por ejemplo, las estrellas ocupan un ancho fijo.
+      
+      Solo voy a poner los comentarios de los cambios y añadidos para hacerlo responsivo.
+      Los otros comentarios se pueden ver en el ejercicio no responsivo. */
+      @font-face {
+        font-family: cinema;
+        src: url(cinema_st.ttf);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-size: 100%;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        /* Usamos vh para coger el 100% del alto del viewport (ventana) y así
+        poner el degradado en todo el alto de una manera más sencilla */
+        height: 100vh;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          180deg,
+          rgb(0, 0, 0) 0%,
+          rgb(67, 67, 67) 100%
+        );
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+      header {
+        font-family: cinema !important;
+        font-size: 5rem;
+        text-align: center;
+        color: rgb(179, 178, 178);
+      }
+      main {
+        width: 90%;
+        margin: auto;
+        /* Hemos convertir los display: inline-block en flex que nos da más juego y
+        posibilidades */
+        display: flex;
+        /* Para que bajen de línea los trailes que ocupen de más */
+        flex-wrap: wrap;
+        /* Margen entre las filas y columnas del flex */
+        gap: 20px;
+        /* Los mostramos centrados horizontalmente */
+        justify-content: center;
+      }
+      .trailer {
+        /* Usamos clamp para establecer un valor mínimo, el deseado y un máximo, en 
+        lugar de usar min-width: 300px; width:40% y max-width: 600px; */
+        width: clamp(300px, 40%, 600px);
+        border: 1px lightgray solid;
+        border-radius: 15px 15px 0 0;
+        overflow: hidden;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        text-align: left;
+        vertical-align: top;
+      }
+      .trailer iframe {
+        width: 100%;
+        height: 236px;
+      }
+      .trailer h2 {
+        background-color: white;
+        color: rgb(130, 2, 2);
+        padding: 10px;
+      }
+      .info {
+        background-color: #405d79;
+        color: white;
+        padding: 10px;
+        border-bottom: 1px white solid;
+      }
+      .info p {
+        margin-bottom: 5px;
+      }
+      .trailer footer {
+        background-color: #01182c;
+      }
+      .boton {
+        background-color: #405d79;
+        color: white;
+        padding: 5px 10px;
+        display: inline-block;
+        margin: 10px;
+      }
+      .boton:hover {
+        background-color: #3c8dd9;
+      }
+      .enlaces {
+        text-align: end;
+      }
+      .puntuacion {
+        background-image: url(estrella.png);
+        height: 24px;
+        text-indent: -3000px;
+      }
+      .puntuacion1 {
+        width: 24px;
+      }
+      .puntuacion2 {
+        width: calc(24px * 2);
+      }
+      .puntuacion3 {
+        width: calc(24px * 3);
+      }
+      .puntuacion4 {
+        width: calc(24px * 4);
+      }
+      /* En dispositivos con un ancho máximo de 693px (incluidos). Hemos puesto 693
+      probando, podía ser un poco más o menos. También podríamos tener más media query
+      y realizar más cambios */
+      @media all and (max-width: 693px) {
+        main {
+          /* Hacemos un pcoo más grande el main y un espacio menor entre las filas
+          y columnas del flex */
+          width: 98%;
+          gap: 10px;
+        }
+        /* Hacemos más pequeña la letra del encabezado */
+        header h1 {
+          font-size: 2rem;
+        }
+        /* Unos valores a base de probar, pudiendo ser otros */
+        .trailer {
+          width: clamp(330px, 80%, 700px);
+        }
+        /* Lo mismo con la altura del iframe, podrían ser otra */
+        .trailer iframe {
+          height: 200px;
+        }
+      }
+      /* En pantallas muy grandes */
+      @media all and (min-width: 1500px) {
+        .trailer {
+          width: 40%;
+        }
+        .trailer iframe {
+          height: auto;
+          /* En lugar de un alto fijo, usamos una relación de aspecto. Los monitores
+          grandes suelen ser de 16/9 o 16/10 */
+          aspect-ratio: 16/9;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Trailers 2024</h1>
+    </header>
+    <main>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <div class="puntuacion puntuacion3"></div>
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <div class="puntuacion puntuacion2">2 estrellas</div>
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <div class="puntuacion puntuacion2">2 estrellas</div>
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <div class="puntuacion puntuacion3"></div>
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+      <section class="trailer">
+        <iframe
+          src="https://www.youtube.com/embed/61rrDlVwvx4?si=e0OfTMkr47ZzP27h"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+        <h2>Deadpool &amp; Wolverine</h2>
+        <div class="info">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+            illum ipsum non ullam aspernatur! Incidunt aut error quod ad! Earum!
+          </p>
+          <img src="estrella.png" alt="1 estrella" />
+          <img src="estrella.png" alt="1 estrella" />
+        </div>
+        <footer>
+          <a href="" class="boton">+ información</a>
+          <div class="enlaces">
+            <a href=""><img src="facebook.svg" alt="facebook" /></a>
+            <a href=""><img src="twitter.svg" alt="twitter" /></a>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
